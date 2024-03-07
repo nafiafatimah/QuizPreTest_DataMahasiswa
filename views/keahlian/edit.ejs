@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Keahlian</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Edit Keahlian</h1>
+        <form method="POST" action="/keahlian/update/<%= keahlian.id_keahlian %>">
+            <div class="form-group">
+                <label for="nama_keahlian">Nama Keahlian:</label>
+                <input type="text" class="form-control" id="nama_keahlian" name="nama_keahlian" value="<%= keahlian.nama_keahlian %>" required>
+            </div>
+            <div class="form-group">
+                <label for="tingkat_keahlian">Tingkat Keahlian:</label>
+                <select class="form-control" id="tingkat_keahlian" name="tingkat_keahlian" required>
+                    <option value="1" <%= keahlian.tingkat_keahlian === '1' ? 'selected' : '' %>>1</option>
+                    <option value="2" <%= keahlian.tingkat_keahlian === '2' ? 'selected' : '' %>>2</option>
+                    <option value="3" <%= keahlian.tingkat_keahlian === '3' ? 'selected' : '' %>>3</option>
+                    <option value="4" <%= keahlian.tingkat_keahlian === '4' ? 'selected' : '' %>>4</option>
+                    <option value="5" <%= keahlian.tingkat_keahlian === '5' ? 'selected' : '' %>>5</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

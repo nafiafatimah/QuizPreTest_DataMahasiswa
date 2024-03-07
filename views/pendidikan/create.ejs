@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Pendidikan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Tambah Pendidikan</h1>
+        <form method="POST" action="/pendidikan/store">
+            <div class="form-group">
+                <label for="id_mahasiswa">ID Mahasiswa:</label>
+                <input type="number" class="form-control" id="id_mahasiswa" name="id_mahasiswa" required>
+            </div>
+            <div class="form-group">
+                <label for="nama_instansi">Nama Instansi:</label>
+                <input type="text" class="form-control" id="nama_instansi" name="nama_instansi" required>
+            </div>
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+                <input type="text" class="form-control" id="jurusan" name="jurusan" required>
+            </div>
+            <div class="form-group">
+                <label for="tahun_masuk">Tahun Masuk:</label>
+                <input type="number" class="form-control" id="tahun_masuk" name="tahun_masuk" required>
+            </div>
+            <div class="form-group">
+                <label for="tahun_lulus">Tahun Lulus:</label>
+                <input type="number" class="form-control" id="tahun_lulus" name="tahun_lulus" required>
+            </div>
+            <div class="form-group">
+                <label for="nomor_jazah">Nomor Jazah:</label>
+                <input type="text" class="form-control" id="nomor_jazah" name="nomor_jazah" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-sm btn-success">Simpan</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

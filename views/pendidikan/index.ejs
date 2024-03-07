@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Pendidikan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .custom-form {
+            margin-top: 50px; 
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto; /* Mengaktifkan horizontal scrolling */
+        }
+        .table-responsive {
+            overflow-x: auto; /* Mengaktifkan horizontal scrolling untuk tabel */
+            margin-bottom: 15px; /* Memberikan jarak antara tabel dan tombol */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <% if (messages.success) { %>
+            <div class="alert alert-info" role="alert">
+                <%- messages.success %>
+            </div>
+        <% } %>
+        <div class="row justify-content-center">
+            <div class="col-md-10 custom-form">
+                <a href="/pendidikan/create" class="btn btn-sm btn-success mb-3">Tambah Pendidikan</a>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nama Instansi</th>
+                                <th scope="col">Jurusan</th>
+                                <th scope="col">Tahun Masuk</th>
+                                <th scope="col">Tahun Lulus</th>
+                                <th scope="col">Nomor Jazah</th>
+                                <th scope="col">ID Mahasiswa</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% data.forEach(function(pendidikan) { %>
+                                <tr>
+                                    <td><%= pendidikan.id_pendidikan %></td>
+                                    <td><%= pendidikan.nama_instansi %></td>
+                                    <td><%= pendidikan.jurusan %></td>
+                                    <td><%= pendidikan.tahun_masuk %></td>
+                                    <td><%= pendidikan.tahun_lulus %></td>
+                                    <td><%= pendidikan.nomor_jazah %></td>
+                                    <td><%= pendidikan.id_mahasiswa %></td>
+                                    <td>
+                                        <a href="/pendidikan/edit/<%= pendidikan.id_pendidikan %>" class="btn btn-warning">Edit</a>
+                                        <a href="/pendidikan/delete/<%= pendidikan.id_pendidikan %>" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
